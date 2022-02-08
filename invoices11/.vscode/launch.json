@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run invoices11-sapui5",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/invoices11-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/logaligroupsapui5/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/sapui5",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/invoices11/sapui5\"}"
+      },
+      "envFile": "${workspaceFolder}/sapui5/.env1",
+      "preLaunchTask": "Build invoices11"
+    }
+  ]
+}

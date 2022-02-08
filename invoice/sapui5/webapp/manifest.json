@@ -18,6 +18,14 @@
           "localUri": "localService/metadata.xml",
           "odataVersion": "4.0"
         }
+      },
+      "Northwind.svc": {
+        "uri": "Nothwind/V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
       }
     }
   },
@@ -57,9 +65,17 @@
         }
       },
       "invoices": {
-         "type" : "sap.ui.model.json.JSONModel",
-         "uri" : "invoices.json"
-     
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "invoices.json"
+      },
+      "": {
+        "dataSource": "Northwind.svc",
+        "preload": true,
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": false
+        }
       }
     },
     "resources": {
