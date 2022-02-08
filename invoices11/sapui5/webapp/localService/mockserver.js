@@ -1,13 +1,16 @@
+//@ts-nocheck
 sap.ui.define([
+
     "sap/ui/core/util/MockServer",
     "sap/ui/model/json/JSONModel",
     "sap/base/util/UriParameters",
     "sap/base/Log"
+
 ], function (MockServer, JSONModel, UriParameters, Log) {
     "use strict";
 
     var oMockServer,
-        _sAppPath = "logaligroup.sapui5/",
+        _sAppPath = "logaligroup/sapui5/",
         _sJsonFilesPath = _sAppPath + "localService/mockdata";
 
     var oMockServerInterface = {

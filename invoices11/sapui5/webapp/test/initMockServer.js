@@ -1,6 +1,8 @@
+//@ts-nocheck
 sap.ui.define([
     "../localService/mockserver",
     "sap/m/MessageBox"
+
 ], function (mockserver, MessageBox) {
     "use strict";
 
