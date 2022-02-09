@@ -13,7 +13,6 @@ sap.ui.define([
                                     recipient : {
                                          name : "World"
                              }
-
                     };
                     return new JSONModel(oData);
         }

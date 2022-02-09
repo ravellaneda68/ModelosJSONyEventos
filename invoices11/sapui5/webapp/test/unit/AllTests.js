@@ -1,5 +1,5 @@
 sap.ui.define([
-	"logaligroup/sapui5/test/unit/controller/View1.controller"
+	"logaligroup/sapui5/test/unit/model/InvoicesFormatter"
 ], function () {
 	"use strict";
 });

@@ -8,8 +8,8 @@
     {
       "authenticationType": "none",
       "csrfProtection": false,
-      "source": "^/Nothwind/(.*)$",
-      "destination": "Nothwind",
+      "source": "^/Northwind/(.*)$",
+      "destination": "Northwind",
       "target": "$1"
     },
     {

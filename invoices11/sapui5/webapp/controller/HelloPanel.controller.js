@@ -15,6 +15,7 @@ sap.ui.define([
                      },
 
                  onShowHello: function () {
+
                          //read text from i18n model
                             var oBundle = this.getView().getModel("i18n").getResourceBundle();
 
@@ -23,7 +24,7 @@ sap.ui.define([
                             var sMsg = oBundle.getText("helloMsg", [sRecipient]);
                             MessageToast.show(sMsg);
                          },
-                     onOpenDialog: function () {
+                 onOpenDialog: function () {
                         this.getOwnerComponent().openHelloDialog();
                     }
         });
