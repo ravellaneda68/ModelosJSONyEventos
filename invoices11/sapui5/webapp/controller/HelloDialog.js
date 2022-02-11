@@ -1,13 +1,14 @@
 sap.ui.define([
     "sap/ui/base/ManagedObject",
-    "sap/ui/core/Fragment"
+    "sap/ui/core/Fragment",
+    "sap/ui/core/syncStyleClass"
    ],
     /**
     * @param {typeof sap.ui.core.mvc.Controller} Controller
     * @param {typeof sap.ui.core.Fragment} Fragment
     */
    
-    function (ManagedObject, Fragment) {
+    function (ManagedObject, Fragment, syncStyleClass ) {
     "use strict";
             return ManagedObject.extend("logaligroup.sapui5.controller.HelloDialog", {
                 
@@ -36,6 +37,7 @@ sap.ui.define([
                 }).then(function (oDialog) {
                          // connect dialog to the root view
                          oView.addDependent(oDialog);
+                         syncStyleClass(oView.getController().getOwnerComponent().getContentDensityClass(),oView, oDialog);
                          oDialog.open();
          });
                 } else {

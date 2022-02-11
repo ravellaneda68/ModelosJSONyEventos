@@ -2,32 +2,63 @@
           controllerName="logaligroup.sapui5.controller.InvoicesList"
           xmlns="sap.m"
           xmlns:mvc="sap.ui.core.mvc">
-    <List   id="invoiceList"
+    <Table id="invoiceList"
             headerText="{i18n>invoiceListTitle}" 
             class="sapUiResponsiveMargin" 
             width="auto" 
             items="{ path : 'Northwind>/Invoices',
                     sorter : { path : 'ShipperName',
                     group : true }}">
-        <headerToolbar>
-            <Toolbar>
-                <Title text="{i18n>invoiceListTitle}"/>
-                <ToolbarSpacer/>
+       <headerToolbar>
+            <Toolbar >
+                 <Title text="{i18n>invoiceListTitle}"/>
+            <ToolbarSpacer/>
                 <SearchField width="50%" search=".onFilterInvoices"/>
-            </Toolbar>
-         </headerToolbar>       
+                    </Toolbar>
+        </headerToolbar>
+                    <columns>
+                        <Column hAlign="End" minScreenWidth="Small" demandPopin="true" width="5em">
+                        <Text text="{i18n>columnQuantity}"/>
+                        </Column>
 
-        <items>
-             <ObjectListItem title="{Northwind>Quantity} x {Northwind>ProductName}"                   
-                             number="{ parts : [ {path : 'Northwind>ExtendedPrice'}, 
-                                                 {path : 'currency>/usd'}],type: 'sap.ui.model.type.Currency',
-                                                  formatOptions: {showMeasure : false}}"
-                             numberUnit="{currency>/usd}"
-                             numberState="{= ${Northwind>ExtendedPrice} > 50 ? 'Success' : 'Error'}"
-                             type="Navigation" 
-                             press="navigateToDetails">
-                                      
-             </ObjectListItem>
-        </items>
-    </List>
-</mvc:View>
+                        <Column>
+                         <Text text="{i18n>columnName}"/>
+                        </Column>
+
+                        <Column minScreenWidth="Small" demandPopin="true">
+                            <Text text="{i18n>columnStatus}"/>
+                        </Column>
+
+                        <Column minScreenWidth="Tablet">   
+                            <Text text="{i18n>columnSupplier}"/>
+                        </Column>
+
+                        <Column hAlign="End">
+                        <Text text="{i18n>columnPrice}"/>
+                        </Column>
+                     </columns>
+
+                        <items>
+                            <ColumnListItem type="Navigation" press="navigateToDetails">
+
+                        <cells>
+                             <ObjectNumber number="{Northwind>Quantity}" emphasized="false"/>
+                             <ObjectIdentifier title="{Northwind>ProductName}"/>
+                             <Text text="{
+                                    path: 'Northwind>Status',
+                                    formatter: '.formatter.invoiceStatus'}"/>
+                                    <Text text="{Northwind>ShipperName}"/>
+
+                                <ObjectNumber
+                                    number="{ parts : [ {path : 'Northwind>ExtendedPrice'},
+                                          {path : 'currency>/usd'}],
+                                          type: 'sap.ui.model.type.Currency',
+                                          formatOptions: {
+                                          showMeasure : false}}"
+                                    unit="{currency>/usd}"
+                                    state="{= ${Northwind>ExtendedPrice} > 50 ? 'Success' : 'Error'}"/>
+                </cells>
+            </ColumnListItem>
+           </items>
+      </Table>
+ </mvc:View>

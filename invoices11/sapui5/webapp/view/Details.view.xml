@@ -7,7 +7,9 @@
     <Page title="{i18n>detailsPageTitle}"
           showNavButton="true"
           navButtonPress=".onNavBack">
-        <ObjectHeader title="{Northwind>Quantity} x {Northwind>ProductName}">
+        <ObjectHeader title="{Northwind>Quantity} x {Northwind>ProductName}" 
+                      responsive="true"
+                      fullScreenOptimized="true">
             <attributes>
                  <ObjectAttribute text="{Northwind>ShipName}"/>
                  <ObjectAttribute text="{Northwind>ShipAddress}"/>
